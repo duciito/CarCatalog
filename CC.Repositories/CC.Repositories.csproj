@@ -56,11 +56,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CarCatalog\CC.Data.csproj">
-      <Project>{57b4db2d-7da8-4d6b-af98-6a1794bad87d}</Project>
-      <Name>CC.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
