@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC.Repositories", "CC.Repos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC.Data", "CC.Data\CC.Data.csproj", "{0AF3F779-964D-468F-8AF9-FFE9B73D9E48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC.ApplicationServices", "CC.ApplicationServices\CC.ApplicationServices.csproj", "{D8F2EEB6-34C0-45FE-97DF-C71F90A2DF89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{0AF3F779-964D-468F-8AF9-FFE9B73D9E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AF3F779-964D-468F-8AF9-FFE9B73D9E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AF3F779-964D-468F-8AF9-FFE9B73D9E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F2EEB6-34C0-45FE-97DF-C71F90A2DF89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F2EEB6-34C0-45FE-97DF-C71F90A2DF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F2EEB6-34C0-45FE-97DF-C71F90A2DF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F2EEB6-34C0-45FE-97DF-C71F90A2DF89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EDB8685C-F27A-412E-B781-018EA90796E4} = {CDC4CEB9-2A4B-4487-8731-4AD7C7A5AA0D}
 		{0AF3F779-964D-468F-8AF9-FFE9B73D9E48} = {CDC4CEB9-2A4B-4487-8731-4AD7C7A5AA0D}
+		{D8F2EEB6-34C0-45FE-97DF-C71F90A2DF89} = {CDC4CEB9-2A4B-4487-8731-4AD7C7A5AA0D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {231DFBAB-194F-4972-B3B4-76317D790A26}
