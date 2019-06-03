@@ -49,6 +49,7 @@
     <Compile Include="Implementations\CarMakeService.cs" />
     <Compile Include="Implementations\CarService.cs" />
     <Compile Include="Implementations\CarTypeService.cs" />
+    <Compile Include="Implementations\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +61,9 @@
       <Project>{edb8685c-f27a-412e-b781-018ea90796e4}</Project>
       <Name>CC.Repositories</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

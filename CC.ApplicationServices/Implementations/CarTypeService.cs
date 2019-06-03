@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CC.ApplicationServices.Implementations
 {
-    public class CarTypeService
+    public class CarTypeService : IService<CarTypeDto>
     {
         public List<CarTypeDto> Get()
         {
