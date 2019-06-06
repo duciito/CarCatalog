@@ -28,6 +28,9 @@ namespace CC.ApplicationServices.Implementations
                     });
                 }
             }
+            if (carMakeDtos.Count == 0)
+                return null;
+
             return carMakeDtos;
         }
 
@@ -38,6 +41,9 @@ namespace CC.ApplicationServices.Implementations
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
                 CarMake carMakeEntity = unitOfWork.CarMakeRepository.GetById(id);
+
+                if (carMakeEntity == null)
+                    return null;
 
                 carMakeDto = new CarMakeDto
                 {

@@ -28,7 +28,7 @@ namespace CC.WebAPIServices.Controllers
         }
 
         // GET: api/Cars/5
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult GetById(int id)
         {
             return Json(_service.GetById(id));
         }
@@ -78,7 +78,7 @@ namespace CC.WebAPIServices.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult Version()
+        public IHttpActionResult Index()
         {
             return Json("Web API version 2.0");
         }

@@ -27,6 +27,9 @@ namespace CC.ApplicationServices.Implementations
                     });
                 }
             }
+            if (carTypeDtos.Count == 0)
+                return null;
+
             return carTypeDtos;
         }
 
@@ -37,6 +40,9 @@ namespace CC.ApplicationServices.Implementations
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
                 CarType carTypeEntity = unitOfWork.CarTypeRepository.GetById(id);
+
+                if (carTypeEntity == null)
+                    return null;
 
                 carTypeDto = new CarTypeDto
                 {
