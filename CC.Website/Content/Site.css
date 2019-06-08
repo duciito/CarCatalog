@@ -1,24 +1,172 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html, body {
+    background: #baafc6;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    color: #6c6d59;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+#main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 3% 0 3%;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+#content-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h1 i {
+    color: #91a1a5;
+    position: relative;
+    top: 3px;
+    right: 4px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    float: left;
+    margin-left: 30px;
+    padding: 8px;
+    font-weight: 600;
+    border-bottom: 2px solid #91a1a5;
+}
+
+a {
+    text-decoration: none;
+    color: #6c6d59;
+    font-size: 1rem;
+}
+
+nav li:hover {
+    border-bottom-color: #6c6d59;
+}
+
+#footer-container {
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+@media only screen and (min-width: 993px) and (max-width : 1200px) {
+    html {
+        font-size: 16px;
+    }
+
+    #main-container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+    html {
+        font-size: 16px;
+    }
+
+    #main-container {
+        width: 80%;
+    }
+
+    #header-container {
+        padding: 2% 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        #header-container nav {
+            margin-top: 2.8rem;
+        }
+
+    li {
+        text-align: center;
+        float: left;
+        padding: 5px;
+        margin: 0 40px;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width : 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    #main-container {
+        width: 90%;
+    }
+
+    #header-container {
+        padding: 2% 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        #header-container nav {
+            margin-top: 2.8rem;
+        }
+
+    li {
+        text-align: center;
+        float: left;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width : 576px) {
+    html {
+        font-size: 14px;
+    }
+
+    #main-container {
+        width: 90%;
+    }
+
+    #header-container {
+        padding: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    li {
+        text-align: center;
+        float: none;
+        padding: 5px;
+        margin: 30px 0 0 0;
+    }
 }

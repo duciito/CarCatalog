@@ -5,7 +5,7 @@ namespace CC.Website.Controllers
 {
     public class CarTypesController : BaseController<CarTypeVM>
     {
-        public CarTypesController() : base(new Uri("https://localhost/api/cartypes/"))
+        public CarTypesController() : base(new Uri("http://localhost:49610/api/cartypes/"))
         {
 
         }

@@ -135,9 +135,10 @@
     <Compile Include="ViewModels\CarVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\normalize.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.css" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -159,17 +160,20 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\CarTypes\Index.cshtml" />
+    <Content Include="Views\CarTypes\Create.cshtml" />
+    <Content Include="Views\CarTypes\Details.cshtml" />
+    <Content Include="Views\CarTypes\Edit.cshtml" />
+    <Content Include="Views\CarMakes\Index.cshtml" />
+    <Content Include="Views\CarMakes\Create.cshtml" />
+    <Content Include="Views\CarMakes\Edit.cshtml" />
+    <Content Include="Views\CarMakes\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Base\" />
-    <Folder Include="Views\CarMakes\" />
     <Folder Include="Views\Cars\" />
-    <Folder Include="Views\CarTypes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

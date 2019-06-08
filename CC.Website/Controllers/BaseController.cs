@@ -137,7 +137,7 @@ namespace CC.Website.Controllers
         }
 
         // POST: CarTypes/Delete/5
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult> Delete(int id)
         {
             try
