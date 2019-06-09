@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,11 @@ namespace CC.Data.Entities
         public int HorsePower { get; set; }
 
         public int MakeId { get; set; }
-        public CarMake CarMake { get; set; }
+        [ForeignKey("MakeId")]
+        public virtual CarMake CarMake { get; set; }
 
         public int TypeId { get; set; }
-        public CarType CarType { get; set; }
+        [ForeignKey("TypeId")]
+        public virtual CarType CarType { get; set; }
     }
 }

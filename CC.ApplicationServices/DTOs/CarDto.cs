@@ -12,8 +12,8 @@ namespace CC.ApplicationServices.DTOs
         public string ReleaseYear { get; set; }
 
         public int HorsePower { get; set; }
-        public CarMakeDto CarMake { get; set; }
-        public CarTypeDto CarType { get; set; }
+        public int MakeId { get; set; }
+        public int TypeId { get; set; }
 
         public bool Validate()
         {

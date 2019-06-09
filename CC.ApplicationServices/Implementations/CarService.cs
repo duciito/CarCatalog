@@ -25,24 +25,11 @@ namespace CC.ApplicationServices.Implementations
                         Model = item.Model,
                         ReleaseYear = item.ReleaseYear,
                         HorsePower = item.HorsePower,
-                        CarMake = new CarMakeDto
-                        {
-                            Id = item.MakeId,
-                            Name = item.CarMake.Name,
-                            Country = item.CarMake.Country,
-                            Description = item.CarMake.Description
-                        },
-                        CarType = new CarTypeDto
-                        {
-                            Id = item.TypeId,
-                            Name = item.CarType.Name,
-                            Description = item.CarType.Description
-                        }
+                        MakeId = item.MakeId,
+                        TypeId = item.TypeId
                     });
                 }
             }
-            if (carDtos.Count == 0)
-                return null;
 
             return carDtos;
         }
@@ -64,19 +51,8 @@ namespace CC.ApplicationServices.Implementations
                     Model = carEntity.Model,
                     ReleaseYear = carEntity.ReleaseYear,
                     HorsePower = carEntity.HorsePower,
-                    CarMake = new CarMakeDto
-                    {
-                        Id = carEntity.MakeId,
-                        Name = carEntity.CarMake.Name,
-                        Country = carEntity.CarMake.Country,
-                        Description = carEntity.CarMake.Description
-                    },
-                    CarType = new CarTypeDto
-                    {
-                        Id = carEntity.TypeId,
-                        Name = carEntity.CarType.Name,
-                        Description = carEntity.CarType.Description
-                    }
+                    MakeId = carEntity.MakeId,
+                    TypeId = carEntity.TypeId
                 };
             }
             return carDto;
@@ -90,8 +66,8 @@ namespace CC.ApplicationServices.Implementations
                 Model = carDto.Model,
                 ReleaseYear = carDto.ReleaseYear,
                 HorsePower = carDto.HorsePower,
-                MakeId = carDto.CarMake.Id,
-                TypeId = carDto.CarType.Id
+                MakeId = carDto.MakeId,
+                TypeId = carDto.TypeId
             };
 
             try

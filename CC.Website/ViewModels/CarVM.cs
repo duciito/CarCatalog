@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace CC.Website.ViewModels
 {
@@ -17,9 +18,9 @@ namespace CC.Website.ViewModels
         public int HorsePower { get; set; }
 
         public int MakeId { get; set; }
-        public CarMakeVM CarMake { get; set; }
-
         public int TypeId { get; set; }
-        public CarTypeVM CarType { get; set; }
+
+        public SelectList CarTypes { get; set; }
+        public SelectList CarMakes { get; set; }
     }
 }

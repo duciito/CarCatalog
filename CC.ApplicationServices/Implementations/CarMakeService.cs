@@ -28,8 +28,6 @@ namespace CC.ApplicationServices.Implementations
                     });
                 }
             }
-            if (carMakeDtos.Count == 0)
-                return null;
 
             return carMakeDtos;
         }

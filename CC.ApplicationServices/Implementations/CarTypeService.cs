@@ -27,8 +27,6 @@ namespace CC.ApplicationServices.Implementations
                     });
                 }
             }
-            if (carTypeDtos.Count == 0)
-                return null;
 
             return carTypeDtos;
         }
