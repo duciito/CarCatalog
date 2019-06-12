@@ -32,6 +32,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 h1 {
@@ -76,6 +77,32 @@ a {
 nav li:hover {
     border-bottom-color: #6c6d59;
 }
+
+table, th, td {
+    background: #f7f3de;
+    padding: 0.7rem;
+    text-align: center;
+    border-collapse: collapse;
+    border-bottom: 0.4rem solid #91a1a5;
+    font-size: 1rem;
+    margin-left: 2rem;
+}
+
+table {
+    margin: 0;
+}
+
+table, .order tr:last-child td {
+    text-align: right;
+    border-bottom: none;
+}
+
+table, .order tr:last-child td:first-child, .order table, .order tr:last-child td:nth-child(2) {
+    text-align: center;
+    border-bottom: none;
+}
+
+
 
 #footer-container {
     padding: 1%;

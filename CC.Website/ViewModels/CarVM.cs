@@ -20,6 +20,8 @@ namespace CC.Website.ViewModels
         public int MakeId { get; set; }
         public int TypeId { get; set; }
 
+        public string MakeName { get; set; }
+        public string TypeName { get; set; }
         public SelectList CarTypes { get; set; }
         public SelectList CarMakes { get; set; }
     }
