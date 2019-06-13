@@ -14,18 +14,51 @@ namespace CC.Website.Controllers
     {
         protected readonly Uri url;
 
+        protected static async Task<string> GetAccessToken()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:53410");
+
+                // We want the response to be JSON.
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // Build up the data to POST.
+                List<KeyValuePair<string, string>> postData = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("grant_type", "password"),
+                    new KeyValuePair<string, string>("username", "daniel"),
+                    new KeyValuePair<string, string>("password", "Thatpass1")
+                };
+
+                FormUrlEncodedContent content = new FormUrlEncodedContent(postData);
+
+                // Post to the Server and parse the response.
+                HttpResponseMessage response = await client.PostAsync("Token", content);
+                string jsonString = await response.Content.ReadAsStringAsync();
+                object responseData = JsonConvert.DeserializeObject(jsonString);
+
+                // return the Access Token.
+                return ((dynamic)responseData).access_token;
+            }
+        }
+
         public BaseController(Uri url)
         {
             this.url = url;
         }
         // GET: CarTypes
-        public async Task<ActionResult> Index()
+        public virtual async Task<ActionResult> Index()
         {
+            string accessToken = await GetAccessToken();
+
             using (HttpClient client = new HttpClient())
             {
                 client.BaseAddress = url;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + accessToken);
 
                 HttpResponseMessage response = await client.GetAsync("get");
 
@@ -36,13 +69,16 @@ namespace CC.Website.Controllers
         }
 
         // GET: CarTypes/Details/5
-        public async Task<ActionResult> Details(int id)
+        public virtual async Task<ActionResult> Details(int id)
         {
+            string accessToken = await GetAccessToken();
+            
             using (HttpClient client = new HttpClient())
             {
                 client.BaseAddress = url;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + accessToken);
 
                 HttpResponseMessage response = await client.GetAsync("getbyid/" + id);
 
@@ -53,7 +89,7 @@ namespace CC.Website.Controllers
         }
 
         // GET: CarTypes/Create
-        public ActionResult Create()
+        public virtual async Task<ActionResult> Create()
         {
             return View();
         }
@@ -64,11 +100,14 @@ namespace CC.Website.Controllers
         {
             if (ModelState.IsValid)
             {
+                string accessToken = await GetAccessToken();
+                
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = url;
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + accessToken);
 
                     var content = JsonConvert.SerializeObject(viewModel);
                     var buffer = System.Text.Encoding.UTF8.GetBytes(content);
@@ -88,14 +127,16 @@ namespace CC.Website.Controllers
         }
 
         // GET: CarTypes/Edit/5
-        public async Task<ActionResult> Edit(int id)
+        public virtual async Task<ActionResult> Edit(int id)
         {
+            string accessToken = await GetAccessToken();
 
             using (var client = new HttpClient())
             {
                 client.BaseAddress = url;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + accessToken);
 
                 // make the request
                 HttpResponseMessage response = await client.GetAsync("getbyid/" + id);
@@ -113,11 +154,14 @@ namespace CC.Website.Controllers
         {
             if (ModelState.IsValid)
             {
+                string accessToken = await GetAccessToken();
+
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = url;
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + accessToken);
 
                     var content = JsonConvert.SerializeObject(viewModel);
                     var buffer = System.Text.Encoding.UTF8.GetBytes(content);
@@ -142,11 +186,14 @@ namespace CC.Website.Controllers
         {
             try
             {
+                string accessToken = await GetAccessToken();
+
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = url;
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + accessToken);
 
                     // make the request
                     HttpResponseMessage response = await client.DeleteAsync("delete/" + id);
